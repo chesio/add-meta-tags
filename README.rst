@@ -10,7 +10,7 @@ It also supports advanced *SEO title* customization letting you take control of
 the title generation on every part of the web site. Moreover, a basic *breadcrumb
 trail* generator is provided for use with hierarchical post types. Last, but not
 least, it lets you customize the *locale* on a per post basis generating a proper
-*hreflang* for a signle language and, also, is out-of-the-box compatible with
+*hreflang* for a single language and, also, is out-of-the-box compatible with
 WPML and Polylang multilingual plugins (through the WPML language configuration
 file that ships with the plugin).
 

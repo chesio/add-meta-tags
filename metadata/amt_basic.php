@@ -154,7 +154,7 @@ function amt_add_basic_metadata_head( $post, $attachments, $embedded_media, $opt
             //   takes place normally.
             //
 
-            // The regex pattern fo our special notation.
+            // The regex pattern for our special notation.
             $special_notation_pattern = '#(?:\[field\=)([^\]]+)(?:\])#';
 
             // The following covers content pages, as $custom_fields is only set on content pages. See above.
@@ -455,7 +455,7 @@ function amt_add_basic_metadata_head( $post, $attachments, $embedded_media, $opt
 
             // Static Posts Index Page
             // If no keywords have been set in the metabox and this is the static page,
-            // which displayes the latest posts, use the categories of the posts in the loop.
+            // which displays the latest posts, use the categories of the posts in the loop.
             } elseif ( amt_is_static_home() ) {
                 // Here we sanitize the provided keywords for safety
                 $cats_from_loop = sanitize_text_field( amt_sanitize_keywords( implode( ', ', amt_get_categories_from_loop() ) ) );

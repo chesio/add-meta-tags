@@ -2846,7 +2846,7 @@ function amt_is_product() {
 // Determines if a Product Group page has been requested.
 function amt_is_product_group() {
     // Normally a product group should fall into the is_tax() validation.
-    // Product groups other than WordPress custom taxonomies are not suported.
+    // Product groups other than WordPress custom taxonomies are not supported.
     // However, we use this function in order to distinguish a non product
     // related taxonomy from a product related one (aka product group).
     // This is useful in case we need to set the metadata object type to a
@@ -2897,7 +2897,7 @@ function amt_get_review_data( $post ) {
     // Note about conversion of ampersand:
     // Data is returned with & converted to &amp; by amt_get_post_meta_express_review().
     // This character mainly exists in sameAs URLs  (TODO: Find better replacement using preg_replace to spacifically target sameAs attributes)
-    // The problem is that ';' is interpretted as a comment in the INI specification,
+    // The problem is that ';' is interpreted as a comment in the INI specification,
     // so parse_ini_string() strips part of the URL, which is wrong.
     // Here we convert &amp; to & and leave it as is in the generated review data.
     // To convert it back to &amp; after parse_ini_string() add something like:
@@ -4164,7 +4164,7 @@ function amt_metadata_analysis($default_text, $metadata_block_head, $metadata_bl
             //$post_title_html_element = wp_get_document_title();
             $post_title_html_element = strtolower( get_wp_title_rss() );
         } else {
-            // Reverting back to the one argument version of the fitlering function.
+            // Reverting back to the one argument version of the filtering function.
             //$post_title_html_element = strtolower( apply_filters('wp_title', $post_title) );
             // Until testing is performed on old WP versions we just use post title
             $post_title_html_element = $post_title;
@@ -4264,8 +4264,8 @@ function amt_metadata_analysis($default_text, $metadata_block_head, $metadata_bl
         $occurrences = preg_match_all( sprintf($keyword_matching_pattern, $topic_keyword), $post_content, $matches );
         if ( $occurrences ) {
             // Only for content
-            $topic_keyword_desnity = round( (($occurrences / $post_word_count) * 100), 2);
-            $output .= sprintf( ' <td>%d (%.2f%%)</td>', $occurrences, $topic_keyword_desnity );
+            $topic_keyword_density = round( (($occurrences / $post_word_count) * 100), 2);
+            $output .= sprintf( ' <td>%d (%.2f%%)</td>', $occurrences, $topic_keyword_density );
         } else {
             $output .= '<td> </td>';
         }
