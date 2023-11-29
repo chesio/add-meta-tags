@@ -1,6 +1,6 @@
 <?php
 
-/**
+/*
  * Plugin Name: Add Meta Tags
  * Plugin URI: https://github.com/chesio/add-meta-tags
  * Description: Add basic meta tags and also Opengraph, Schema.org Microdata, Twitter Cards and Dublin Core metadata to optimize your web site for better SEO.
@@ -14,7 +14,7 @@
  * Update URI: https://github.com/chesio/add-meta-tags
  */
 
-/**
+/*
  *  This file is part of the Add-Meta-Tags distribution package.
  *
  *  Add-Meta-Tags is an extension for the WordPress publishing platform.
