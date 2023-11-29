@@ -1,15 +1,18 @@
 <?php
-/*
-Plugin Name: Add Meta Tags
-Plugin URI: http://www.g-loaded.eu/2006/01/05/add-meta-tags-wordpress-plugin/
-Description: Add basic meta tags and also Opengraph, Schema.org Microdata, Twitter Cards and Dublin Core metadata to optimize your web site for better SEO.
-Version: 2.11.3
-Author: George Notaras
-Author URI: http://www.g-loaded.eu/
-License: Apache License v2
-Text Domain: add-meta-tags
-Domain Path: /languages/
-*/
+
+/**
+ * Plugin Name: Add Meta Tags
+ * Plugin URI: https://github.com/chesio/add-meta-tags
+ * Description: Add basic meta tags and also Opengraph, Schema.org Microdata, Twitter Cards and Dublin Core metadata to optimize your web site for better SEO.
+ * Version: 3.0.0
+ * Author: George Notaras
+ * Author URI: http://www.g-loaded.eu/
+ * License: Apache License v2
+ * Text Domain: add-meta-tags
+ * Domain Path: /languages/
+ * GitHub Plugin URI: https://github.com/chesio/add-meta-tags
+ * Update URI: https://github.com/chesio/add-meta-tags
+ */
 
 /**
  *  This file is part of the Add-Meta-Tags distribution package.
@@ -653,7 +656,7 @@ function amt_get_metadata_review($options, $add_as_view=false) {
     //
 
     $data = $enclosure_start . $text_title;
-    
+
     $data .= apply_filters('amt_metadata_review_text_before', $text_intro, $metadata_block_head, $metadata_block_footer, $metadata_block_content_filter);
 
     //
@@ -879,4 +882,3 @@ if ( apply_filters('amt_purge_cached_metadata_on_comment_actions', false) ) {
     add_action('trackback_post', 'amt_purge_transient_cache_post_comments', 10);
     add_action('wp_set_comment_status', 'amt_purge_transient_cache_post_comments_status', 10, 2);
 }
-

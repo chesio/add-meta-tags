@@ -1,27 +1,16 @@
 === Add Meta Tags ===
 Contributors: gnotaras
-Tags: 
 Requires at least: 3.6.0
 Tested up to: 4.5
-Stable tag: 2.11.3
+Stable tag: 3.0.0
 License: Apache License v2
 License URI: http://www.apache.org/licenses/LICENSE-2.0.txt
 
-A metadata plugin that can optimize your web site for more efficient indexing and easier sharing of your content. [DEPRECATED]
+A metadata plugin that can optimize your web site for more efficient indexing and easier sharing of your content.
 
 == Description ==
 
 _Add-Meta-Tags_ is a Free metadata plugin for the _WordPress Publishing Platform_ that can optimize your web site for more efficient indexing of your content by search engines and easier sharing on social networks. It achieves this by generating machine friendly information about your content, called <em>metadata</em>, according to widely used standard specifications.
-
-**NOTICE:** THIS PLUGIN HAS BEEN **DEPRECATED**. IT IS NO LONGER SUPPORTED. IT IS NO LONGER TESTED WITH NEW WORDPRESS RELEASES. USING IT IN PRODUCTION IS NOT RECOMMENDED.
-
-IT IS STRONGLY SUGGESTED TO MIGRATE TO OTHER MORE MODERN AND BETTER MAINTAINED PLUGINS.
-
-IF YOU ARE STARTING A NEW BLOG, IT IS HIGHLY RECOMMENDED TO SEARCH FOR OTHER PLUGINS IN ORDER TO AVOID THE INEVITABLE FUTURE MIGRATION.
-
-REGARDING EXISTING USERS, AT THE TIME OF WRITING, THERE ARE NO MAJOR BUGS. PROVIDED THAT THE WORDPRESS API DOES NOT CHANGE SOON, YOU HAVE THE TIME TO EXPERIMENT WITH OTHER PLUGINS AND PLAN YOUR MIGRATION.
-
-SUPPORT VOLUNTEERS IN THE WORDPRESS FORUMS SHOULD NOT RECOMMEND THIS PLUGIN TO NEW USERS.
 
 <blockquote>
 
@@ -229,4 +218,3 @@ UPDATE wp_postmeta SET meta_key='_other_description' WHERE meta_key='_amt_descri
 </pre>
 
 The above SQL statement renames the `_amt_description` field of the `wp_postmeta` table to `_other_description`.
-
