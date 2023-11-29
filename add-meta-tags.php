@@ -186,7 +186,7 @@ if ( apply_filters('amt_enable_legacy_title_support', true) ) {
 //    add_filter('document_title_parts', 'amt_custom_title_tag', 9999, 1);
 // } else {
     // add_filter('wp_title', 'amt_custom_title_tag', 1000, 2);
-    // Reverting back to the one argument version of the fitlering function.
+    // Reverting back to the one argument version of the filtering function.
 //    add_filter('wp_title', 'amt_custom_title_tag', 9999, 1);
 // }
 

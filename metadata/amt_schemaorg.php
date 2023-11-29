@@ -191,7 +191,7 @@ function amt_add_schemaorg_metadata_footer( $post, $attachments, $embedded_media
         $metadata_arr = apply_filters( 'amt_custom_metadata_schemaorg_footer', $metadata_arr, $post, $options, $attachments, $embedded_media );
         return $metadata_arr;
 
-    // Default fron tpage displaying the latest posts.
+    // Default front page displaying the latest posts.
 
     } elseif ( amt_is_default_front_page() ) {
 
@@ -200,7 +200,7 @@ function amt_add_schemaorg_metadata_footer( $post, $attachments, $embedded_media
         // NOTICE:
         // Even if the front page has been set as the source of profile, this
         // this does not work with the default front page with the latest posts.
-        // This is becuase this page does not have an author, which is essential
+        // This is because this page does not have an author, which is essential
         // for the generated metadata on a page that is supposed to be a profile.
         // Therefore, an Organization object is always generated on the default
         // front page and it is never treated as a profile page by Add-Meta-Tags.
@@ -416,11 +416,11 @@ function amt_add_schemaorg_metadata_content_filter( $post_body ) {
             if ( $options["omit_vendor_html_comments"] == "0" ) {
                 array_unshift( $cached_content_metadata_arr, "<!-- BEGIN Schema.org microdata added by the Add-Meta-Tags WordPress plugin -->" );
             }
-            array_unshift( $cached_content_metadata_arr, "" );   // Intentionaly left empty
+            array_unshift( $cached_content_metadata_arr, "" );   // Intentionally left empty
             if ( $options["omit_vendor_html_comments"] == "0" ) {
                 array_push( $cached_content_metadata_arr, "<!-- END Schema.org microdata added by the Add-Meta-Tags WordPress plugin -->" );
             }
-            array_push( $cached_content_metadata_arr, "" );   // Intentionaly left empty
+            array_push( $cached_content_metadata_arr, "" );   // Intentionally left empty
 
             //
             // Non persistent cache for metadata review mode.
@@ -641,7 +641,7 @@ function amt_add_schemaorg_metadata_content_filter( $post_body ) {
         // Now add closing tag for Article
         $metadata_arr[] = $closing_product_tag;
 
-    // Attachemnts
+    // Attachments
     } elseif ( is_attachment() ) {
 
         $mime_type = get_post_mime_type( $post->ID );
@@ -1228,7 +1228,7 @@ function amt_add_schemaorg_metadata_content_filter( $post_body ) {
         // Filtering of the generated Schema.org metadata
         $metadata_arr = apply_filters( 'amt_schemaorg_metadata_content', $metadata_arr );
 
-        // Add articleBody to Artice
+        // Add articleBody to Article
         // Now add the article. Remove last closing '</span>' tag, add articleBody and re-add the closing span afterwards.
         $closing_article_tag = array_pop($metadata_arr);
 
@@ -1269,11 +1269,11 @@ function amt_add_schemaorg_metadata_content_filter( $post_body ) {
         if ( $options["omit_vendor_html_comments"] == "0" ) {
             array_unshift( $metadata_arr, "<!-- BEGIN Schema.org microdata added by the Add-Meta-Tags WordPress plugin -->" );
         }
-        array_unshift( $metadata_arr, "" );   // Intentionaly left empty
+        array_unshift( $metadata_arr, "" );   // Intentionally left empty
         if ( $options["omit_vendor_html_comments"] == "0" ) {
             array_push( $metadata_arr, "<!-- END Schema.org microdata added by the Add-Meta-Tags WordPress plugin -->" );
         }
-        array_push( $metadata_arr, "" );   // Intentionaly left empty
+        array_push( $metadata_arr, "" );   // Intentionally left empty
     }
 
     //
@@ -1329,7 +1329,7 @@ function amt_get_schemaorg_image_metatags( $options, $image_data, $size='medium'
     //
     // 2. An attachment ID (integer)
     //
-    // 3. An attachment object (post object)    (Usually ths is the case in the schema.org generators
+    // 3. An attachment object (post object)    (Usually this is the case in the schema.org generators
     //
 
     $metadata_arr = array();
@@ -1642,7 +1642,7 @@ function amt_add_schemaorg_metadata_comment_filter( $comment_text ) {
     }
     // gravatar
     if ( ! empty( $comment->comment_author_email ) ) {
-        // Contruct gravatar link
+        // Construct gravatar link
         $gravatar_url = "http://www.gravatar.com/avatar/" . md5( $comment->comment_author_email ) . "?s=" . 44;
         $metadata_arr[] = '<meta itemprop="image" content="' . esc_url_raw( $gravatar_url ) . '" />';
     }
@@ -1741,7 +1741,7 @@ function amt_add_jsonld_schemaorg_metadata_head( $post, $attachments, $embedded_
         // Return an array of meta tags. Array item format: ['key_can_be_whatever'] = '<meta name="foo" content="bar" />'
         $metadata_arr = apply_filters( 'amt_custom_metadata_jsonld_schemaorg', $metadata_arr, $post, $options, $attachments, $embedded_media );
 
-    // Default fron tpage displaying the latest posts.
+    // Default front page displaying the latest posts.
 
     } elseif ( amt_is_default_front_page() ) {
 
@@ -1755,7 +1755,7 @@ function amt_add_jsonld_schemaorg_metadata_head( $post, $attachments, $embedded_
         // NOTICE:
         // Even if the front page has been set as the source of profile, this
         // this does not work with the default front page with the latest posts.
-        // This is becuase this page does not have an author, which is essential
+        // This is because this page does not have an author, which is essential
         // for the generated metadata on a page that is supposed to be a profile.
         // Therefore, an Organization object is always generated on the default
         // front page and it is never treated as a profile page by Add-Meta-Tags.
@@ -2120,7 +2120,7 @@ function amt_add_jsonld_schemaorg_metadata_head( $post, $attachments, $embedded_
 //        $metadata_arr[] = $closing_product_tag;
 
 
-    // Attachemnts
+    // Attachments
     } elseif ( is_attachment() ) {
 
         $mime_type = get_post_mime_type( $post->ID );
@@ -2778,7 +2778,7 @@ function amt_add_jsonld_schemaorg_metadata_head( $post, $attachments, $embedded_
         // Filtering of the generated Schema.org metadata
         $metadata_arr = apply_filters( 'amt_jsonld_schemaorg_metadata_content', $metadata_arr );
 
-        // Add articleBody to Artice
+        // Add articleBody to Article
         // Now add the article. Remove last closing '</span>' tag, add articleBody and re-add the closing span afterwards.
 //        $closing_article_tag = array_pop($metadata_arr);
 
@@ -2811,9 +2811,9 @@ function amt_add_jsonld_schemaorg_metadata_head( $post, $attachments, $embedded_
     // Add our comment
 //    if ( count( $metadata_arr ) > 0 ) {
 //        array_unshift( $metadata_arr, "<!-- BEGIN Schema.org microdata added by Add-Meta-Tags WordPress plugin -->" );
-//        array_unshift( $metadata_arr, "" );   // Intentionaly left empty
+//        array_unshift( $metadata_arr, "" );   // Intentionally left empty
 //        array_push( $metadata_arr, "<!-- END Schema.org microdata added by Add-Meta-Tags WordPress plugin -->" );
-//        array_push( $metadata_arr, "" );   // Intentionaly left empty
+//        array_push( $metadata_arr, "" );   // Intentionally left empty
 //    }
 
     //return $post_body;
@@ -2825,9 +2825,9 @@ function amt_add_jsonld_schemaorg_metadata_head( $post, $attachments, $embedded_
 
 //    if ( count( $metadata_arr ) > 0 ) {
 //        array_unshift( $metadata_arr, '<script type="application/ld+json">' );
-//        array_unshift( $metadata_arr, "" );   // Intentionaly left empty
+//        array_unshift( $metadata_arr, "" );   // Intentionally left empty
 //        array_push( $metadata_arr, '</script>' );
-//        array_push( $metadata_arr, "" );   // Intentionaly left empty
+//        array_push( $metadata_arr, "" );   // Intentionally left empty
 //    }
 
 //    return $metadata_arr;
@@ -2862,7 +2862,7 @@ function amt_get_jsonld_schemaorg_image_array( $options, $image_data, $size='med
     //
     // 2. An attachment ID (integer)
     //
-    // 3. An attachment object (post object)    (Usually ths is the case in the schema.org generators
+    // 3. An attachment object (post object)    (Usually this is the case in the schema.org generators
     //
     //var_dump($image_data);
     $metadata_arr = array();
