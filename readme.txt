@@ -1,7 +1,7 @@
 === Add Meta Tags ===
 Contributors: gnotaras
 Requires at least: 3.6.0
-Tested up to: 4.5
+Tested up to: 6.4
 Stable tag: 3.0.1
 License: Apache License v2
 License URI: http://www.apache.org/licenses/LICENSE-2.0.txt
