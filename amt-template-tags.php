@@ -75,11 +75,6 @@ function amt_metadata_footer() {
     amt_print_footer_block();
 }
 
-function amt_metadata_review() {
-    // Prints full metadata in review mode. No user level checks here.
-    echo amt_get_metadata_inspect();
-}
-
 function amt_breadcrumbs( $user_options ) {
     echo amt_get_breadcrumbs( $user_options );
 }
@@ -152,9 +147,10 @@ function amt_get_user_image_info( $size='thumbnail', $user_id=null ) {
         $image_info['width'] = $main_size_meta[1];
         $image_info['height'] = $main_size_meta[2];
     } elseif ( ! is_null($image_data['url']) ) {
-        $image_info['url'] = $main_size_meta[0];
-        $image_info['width'] = $main_size_meta[1];
-        $image_info['height'] = $main_size_meta[2];
+        // FIXME list( $width, $height ) = wp_getimagesize( $image_data['url'] );
+        $image_info['url'] = $image_data['url'];
+        $image_info['width'] = $width;
+        $image_info['height'] = $height;
     } else {
         return false;
     }
@@ -236,6 +232,7 @@ function amt_get_term_image_info( $size='thumbnail', $term_id=null ) {
         $image_info['width'] = $main_size_meta[1];
         $image_info['height'] = $main_size_meta[2];
     } elseif ( ! is_null($image_data['url']) ) {
+        // FIXME
         $image_info['url'] = $main_size_meta[0];
         $image_info['width'] = $main_size_meta[1];
         $image_info['height'] = $main_size_meta[2];
