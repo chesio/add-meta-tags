@@ -1,20 +1,21 @@
 <?php
 
-/**
+/*
  * Plugin Name: Add Meta Tags
  * Plugin URI: https://github.com/chesio/add-meta-tags
  * Description: Add basic meta tags and also Opengraph, Schema.org Microdata, Twitter Cards and Dublin Core metadata to optimize your web site for better SEO.
- * Version: 3.0.0
+ * Version: 3.0.1
  * Author: George Notaras
  * Author URI: http://www.g-loaded.eu/
  * License: Apache License v2
  * Text Domain: add-meta-tags
  * Domain Path: /languages/
  * GitHub Plugin URI: https://github.com/chesio/add-meta-tags
+ * Primary Branch: main
  * Update URI: https://github.com/chesio/add-meta-tags
  */
 
-/**
+/*
  *  This file is part of the Add-Meta-Tags distribution package.
  *
  *  Add-Meta-Tags is an extension for the WordPress publishing platform.
@@ -186,7 +187,7 @@ if ( apply_filters('amt_enable_legacy_title_support', true) ) {
 //    add_filter('document_title_parts', 'amt_custom_title_tag', 9999, 1);
 // } else {
     // add_filter('wp_title', 'amt_custom_title_tag', 1000, 2);
-    // Reverting back to the one argument version of the fitlering function.
+    // Reverting back to the one argument version of the filtering function.
 //    add_filter('wp_title', 'amt_custom_title_tag', 9999, 1);
 // }
 

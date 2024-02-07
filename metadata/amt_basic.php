@@ -115,7 +115,7 @@ function amt_add_basic_metadata_head( $post, $attachments, $embedded_media, $opt
     $full_metatags_as_string = wp_kses( $full_metatags_as_string, amt_get_allowed_html_kses() );
 
     // Make array of full meta tags
-    $full_meta_tags = preg_split('#\R#', $full_metatags_as_string, NULL, PREG_SPLIT_NO_EMPTY);
+    $full_meta_tags = preg_split('#\R#', $full_metatags_as_string, -1, PREG_SPLIT_NO_EMPTY);
 
     // Process
 
@@ -154,7 +154,7 @@ function amt_add_basic_metadata_head( $post, $attachments, $embedded_media, $opt
             //   takes place normally.
             //
 
-            // The regex pattern fo our special notation.
+            // The regex pattern for our special notation.
             $special_notation_pattern = '#(?:\[field\=)([^\]]+)(?:\])#';
 
             // The following covers content pages, as $custom_fields is only set on content pages. See above.
@@ -331,16 +331,16 @@ function amt_add_basic_metadata_head( $post, $attachments, $embedded_media, $opt
                 // $post is an author object
                 $hreflang_url = get_author_posts_url( $post->ID );
             } elseif ( is_year() ) {
-                $archive_year  = get_the_time('Y'); 
+                $archive_year  = get_the_time('Y');
                 $hreflang_url = get_year_link($archive_year);
             } elseif ( is_month() ) {
-                $archive_year  = get_the_time('Y'); 
-                $archive_month = get_the_time('m'); 
+                $archive_year  = get_the_time('Y');
+                $archive_month = get_the_time('m');
                 $hreflang_url = get_month_link($archive_year, $archive_month);
             } elseif ( is_day() ) {
-                $archive_year  = get_the_time('Y'); 
-                $archive_month = get_the_time('m'); 
-                $archive_day   = get_the_time('d'); 
+                $archive_year  = get_the_time('Y');
+                $archive_month = get_the_time('m');
+                $archive_day   = get_the_time('d');
                 $hreflang_url = get_day_link($archive_year, $archive_month, $archive_day);
             }
             // If paged information is available
@@ -455,7 +455,7 @@ function amt_add_basic_metadata_head( $post, $attachments, $embedded_media, $opt
 
             // Static Posts Index Page
             // If no keywords have been set in the metabox and this is the static page,
-            // which displayes the latest posts, use the categories of the posts in the loop.
+            // which displays the latest posts, use the categories of the posts in the loop.
             } elseif ( amt_is_static_home() ) {
                 // Here we sanitize the provided keywords for safety
                 $cats_from_loop = sanitize_text_field( amt_sanitize_keywords( implode( ', ', amt_get_categories_from_loop() ) ) );
@@ -490,7 +490,7 @@ function amt_add_basic_metadata_head( $post, $attachments, $embedded_media, $opt
                 $metadata_arr['basic:description'] = '<meta name="description" content="' . esc_attr( amt_process_paged( $description_content ) ) . '" />';
             }
         }
-        
+
         if ($do_keywords) {
             // The category name alone is included in the 'keywords' metatag
             // Here we sanitize the provided keywords for safety
@@ -517,7 +517,7 @@ function amt_add_basic_metadata_head( $post, $attachments, $embedded_media, $opt
                 $metadata_arr['basic:description'] = '<meta name="description" content="' . esc_attr( amt_process_paged( $description_content ) ) . '" />';
             }
         }
-        
+
         if ($do_keywords) {
             // The tag name alone is included in the 'keywords' metatag
             // Here we sanitize the provided keywords for safety
@@ -554,7 +554,7 @@ function amt_add_basic_metadata_head( $post, $attachments, $embedded_media, $opt
                 $metadata_arr['basic:description'] = '<meta name="description" content="' . esc_attr( amt_process_paged( $description_content ) ) . '" />';
             }
         }
-        
+
         if ($do_keywords) {
             // The taxonomy term name alone is included in the 'keywords' metatag.
             // Here we sanitize the provided keywords for safety.
@@ -594,7 +594,7 @@ function amt_add_basic_metadata_head( $post, $attachments, $embedded_media, $opt
                 $metadata_arr['basic:description'] = '<meta name="description" content="' . esc_attr( $author_description ) . '" />';
             }
         }
-        
+
         // For the keywords metatag use the categories of the posts the author has written and are displayed in the current page.
         if ($do_keywords) {
             // Here we sanitize the provided keywords for safety
@@ -603,7 +603,7 @@ function amt_add_basic_metadata_head( $post, $attachments, $embedded_media, $opt
                 $metadata_arr['basic:keywords'] = '<meta name="keywords" content="' . esc_attr( $cats_from_loop ) . '" />';
             }
         }
-    
+
     // Custom Post Type Archive
     } elseif ( is_post_type_archive() ) {
 
@@ -625,7 +625,7 @@ function amt_add_basic_metadata_head( $post, $attachments, $embedded_media, $opt
             $generic_description = sprintf( $generic_description, post_type_archive_title( $prefix='', $display=false ) );
             $metadata_arr['basic:description'] = '<meta name="description" content="' . esc_attr( amt_process_paged( $generic_description ) ) . '" />';
         }
-        
+
         // For the keywords metatag use the categories of the posts that are listed in the current page.
         if ($do_keywords) {
             // Here we sanitize the provided keywords for safety
@@ -634,7 +634,7 @@ function amt_add_basic_metadata_head( $post, $attachments, $embedded_media, $opt
                 $metadata_arr['basic:keywords'] = '<meta name="keywords" content="' . esc_attr( $cats_from_loop ) . '" />';
             }
         }
-        
+
     }
 
 
@@ -643,4 +643,3 @@ function amt_add_basic_metadata_head( $post, $attachments, $embedded_media, $opt
 
     return $metadata_arr;
 }
-

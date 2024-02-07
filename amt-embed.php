@@ -110,7 +110,7 @@ function amt_embed_template_redirect() {
             // It has been brought to my attention that WooCommerce has an option that forces
             // a redirection from the HTTPS version of the page back to the HTTP version.
             // This happens only if the `woocommerce_unforce_ssl_checkout` option is checked.
-            // Fortunatelly the WooCommerce developers have added a filter for easy resolution
+            // Fortunately the WooCommerce developers have added a filter for easy resolution
             // of any issues. See the `class-wc-https.php` of the WooCommerce plugin.
             add_filter( 'woocommerce_unforce_ssl_checkout', 'amt_return_false' );
         }

@@ -1879,7 +1879,7 @@ function amt_inner_metadata_box( $post ) {
             </p>
         ');
 
-        // Add javascipt to fill textarea with sample review data.
+        // Add javascript to fill textarea with sample review data.
         // CURRENTLY NOT USED
         print('
 <script>
