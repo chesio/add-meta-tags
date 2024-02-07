@@ -11,6 +11,7 @@
  * Text Domain: add-meta-tags
  * Domain Path: /languages/
  * GitHub Plugin URI: https://github.com/chesio/add-meta-tags
+ * Primary Branch: main
  * Update URI: https://github.com/chesio/add-meta-tags
  */
 
